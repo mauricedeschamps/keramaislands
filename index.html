@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#dc3545">
+    <meta name="theme-color" content="#006D8F">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="mobile-web-app-capable" content="yes">
-    <title>Kerama islands</title>
+    <title>Kerama Islands Guide</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22skyblue%22/><text y=%22.9em%22 font-size=%2290%22>🏝️</text></svg>">
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22skyblue%22/><text y=%22.9em%22 font-size=%2290%22>🏝️</text></svg>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     <style>
         :root {
             --primary: #006D8F;
@@ -185,6 +184,7 @@
             cursor: pointer;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             z-index: 100;
+            display: none;
         }
         
         .back-to-top:hover {
@@ -204,15 +204,6 @@
         .map-container {
             position: relative;
             margin: 1rem 0;
-        }
-        
-        .map-label {
-            position: absolute;
-            background-color: rgba(0, 109, 143, 0.8);
-            color: white;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
         }
         
         .transport-option {
@@ -267,6 +258,7 @@
             max-height: 300px;
             object-fit: cover;
             margin: 1rem 0;
+            width: 100%;
         }
         
         .ferry-links {
@@ -301,17 +293,12 @@
         </div>
     </header>
     
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4E5n8zGzQTe9ldQcy6GUvZ93UW6rhL2X3W_K-_Bpb8OSN9MJ6NiRNH68&s=10">
-
     <div class="container">
         <section class="card">
             <h2 lang="en">Kerama Islands Map</h2>
             <h2 lang="ja" class="hidden">慶良間諸島マップ</h2>
             <div class="map-container">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR31CQlY31kHgPkFH8qvLpjIuLvW32ax0mOpVEMwSs0xPMVfchpoQ5QUTUj&s=10" alt="Map of Kerama Islands">
-                <div class="map-label" style="top: 20%; left: 20%;"></div>
-                <div class="map-label" style="top: 50%; left: 20%;"></div>
-                <div class="map-label" style="top: 60%; left: 80%;"></div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR31CQlY31kHgPkFH8qvLpjIuLvW32ax0mOpVEMwSs0xPMVfchpoQ5QUTUj&s=10" alt="Kerama Islands Map">
             </div>
             <p lang="en">The Kerama Islands are a group of 22 islands located about 40 kilometers west of Okinawa Main Island. The three main islands for tourism are Zamami, Aka, and Tokashiki.</p>
             <p lang="ja" class="hidden">慶良間諸島は沖縄本島の西約40kmに位置する22の島々からなる群島です。観光の主要な島は座間味島、阿嘉島、渡嘉敷島の3つです。</p>
@@ -323,7 +310,7 @@
             <p class="update-date" lang="en">Last updated: <span id="current-date"></span></p>
             <p class="update-date" lang="ja" class="hidden">最終更新: <span id="current-date-ja"></span></p>
             
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdAPNXL3ILqwI2CH6cmSzM6forL81hyKfkydVy27cFtor2s9yr9KlCL9Hk&s=10">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdAPNXL3ILqwI2CH6cmSzM6forL81hyKfkydVy27cFtor2s9yr9KlCL9Hk&s=10" alt="Tomari Port">
             
             <h3 lang="en">Access from Naha Airport</h3>
             <h3 lang="ja" class="hidden">那覇空港からのアクセス</h3>
@@ -436,8 +423,6 @@
             
             <p lang="en">Website: <a href="https://myplace-guesthouse.com/ja/access/" class="external-link" target="_blank">https://myplace-guesthouse.com/ja/access/</a></p>
             <p lang="ja" class="hidden">ウェブサイト: <a href="https://myplace-guesthouse.com/ja/access/" class="external-link" target="_blank">https://myplace-guesthouse.com/ja/access/</a></p>
-            
-            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/695195216.jpg?k=a741adb5461b3a0db18b85a0955707e28e177406a48ba514fbac0c84a41bd0f6&o=&hp=1" class="accommodation-image">
         </section>
         
         <section class="card">
@@ -493,7 +478,7 @@
             <div class="island-section">
                 <h3 lang="en">Zamami Island</h3>
                 <h3 lang="ja" class="hidden">座間味島</h3>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeLURA3EAITigpWtYTYKGfdjLSptFTYNchI8CW4E-p3DhEkLBxzYfHjZH6&s=10">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeLURA3EAITigpWtYTYKGfdjLSptFTYNchI8CW4E-p3DhEkLBxzYfHjZH6&s=10" alt="Zamami Island">
                 <p lang="en">Zamami is the largest of the three main Kerama Islands, known for its beautiful beaches and whale watching in winter.</p>
                 <p lang="ja" class="hidden">座間味島は慶良間諸島の主要3島の中で最も大きく、美しいビーチと冬のホエールウォッチングで知られています。</p>
                 
@@ -523,7 +508,7 @@
             <div class="island-section">
                 <h3 lang="en">Aka Island</h3>
                 <h3 lang="ja" class="hidden">阿嘉島</h3>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPipEcuPpVf4PANI-POTHXo-P3SchcjPncixU00QzXFqclvmGdeNmhQPop&s=10">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPipEcuPpVf4PANI-POTHXo-P3SchcjPncixU00QzXFqclvmGdeNmhQPop&s=10" alt="Aka Island">
                 <p lang="en">Aka is a smaller island connected to Zamami by a short ferry ride, known for its friendly deer population.</p>
                 <p lang="ja" class="hidden">阿嘉島は座間味島から短いフェリーで行ける小さな島で、人懐っこい鹿の群れで知られています。</p>
                 
@@ -551,7 +536,7 @@
             <div class="island-section">
                 <h3 lang="en">Tokashiki Island</h3>
                 <h3 lang="ja" class="hidden">渡嘉敷島</h3>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLk4gHaJRvLXINbwZ6cV7-_tK_zVZnDIJKnXNBaZ7hhC81YF-rCnKRdi-6&s=10">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLk4gHaJRvLXINbwZ6cV7-_tK_zVZnDIJKnXNBaZ7hhC81YF-rCnKRdi-6&s=10" alt="Tokashiki Island">
                 <p lang="en">The closest Kerama Island to Okinawa Main Island, known for its stunning beaches and marine activities.</p>
                 <p lang="ja" class="hidden">沖縄本島に最も近い慶良間諸島の島で、素晴らしいビーチとマリンスポーツで知られています。</p>
                 
@@ -579,7 +564,6 @@
             </div>
         </section>
         
-        <!-- 最初に戻るボタン -->
         <div class="to-top-container">
             <a href="#" class="to-top-button" id="main-to-top">
                 <span lang="en"><i class="fas fa-arrow-up"></i> Back to Top</span>
@@ -689,13 +673,6 @@
                 top: 0,
                 behavior: 'smooth'
             });
-        });
-        
-        // Add to home screen prompt
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            const installPrompt = e;
-            // You can show your own install button here if desired
         });
     </script>
 </body>
