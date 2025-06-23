@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#dc3545">
@@ -11,9 +10,9 @@
     <title>Kerama islands</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22skyblue%22/><text y=%22.9em%22 font-size=%2290%22>🏝️</text></svg>">
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22skyblue%22/><text y=%22.9em%22 font-size=%2290%22>🏝️</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-
         :root {
             --primary: #006D8F;
             --secondary: #003D4D;
@@ -253,6 +252,43 @@
         .to-top-button:hover {
             background-color: var(--secondary);
         }
+        
+        .external-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .external-link:hover {
+            text-decoration: underline;
+        }
+        
+        .accommodation-image {
+            max-height: 300px;
+            object-fit: cover;
+            margin: 1rem 0;
+        }
+        
+        .ferry-links {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .ferry-link {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .ferry-link:hover {
+            background-color: var(--primary);
+        }
     </style>
 </head>
 <body>
@@ -265,7 +301,7 @@
         </div>
     </header>
     
- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4E5n8zGzQTe9ldQcy6GUvZ93UW6rhL2X3W_K-_Bpb8OSN9MJ6NiRNH68&s=10">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4E5n8zGzQTe9ldQcy6GUvZ93UW6rhL2X3W_K-_Bpb8OSN9MJ6NiRNH68&s=10">
 
     <div class="container">
         <section class="card">
@@ -375,13 +411,32 @@
                 </tbody>
             </table>
             
+            <div class="ferry-links">
+                <a href="https://www.vill.zamami.okinawa.jp/access/ship/" class="ferry-link" target="_blank" lang="en">Zamami Ferry Info</a>
+                <a href="https://www.vill.zamami.okinawa.jp/access/ship/" class="ferry-link" target="_blank" lang="ja" class="hidden">座間味島フェリー情報</a>
+                <a href="https://www.tokashiki-ferry.com/" class="ferry-link" target="_blank" lang="en">Tokashiki Ferry Info</a>
+                <a href="https://www.tokashiki-ferry.com/" class="ferry-link" target="_blank" lang="ja" class="hidden">渡嘉敷島フェリー情報</a>
+                <a href="https://www.vill.tokashiki.okinawa.jp/kanko/access/" class="ferry-link" target="_blank" lang="en">Tokashiki Booking</a>
+                <a href="https://www.vill.tokashiki.okinawa.jp/kanko/access/" class="ferry-link" target="_blank" lang="ja" class="hidden">渡嘉敷島予約</a>
+            </div>
+            
             <h3 lang="en">Accommodation Near Tomari Port</h3>
             <h3 lang="ja" class="hidden">泊港近くの宿泊施設</h3>
-            <p><strong>MY PLACE</strong> <span lang="en">- Budget accommodation located north of Tomari Port. Offers dormitory beds and private rooms. Just beside High Speed ​​Boat Terminal 3.</span><span lang="ja" class="hidden">- 泊港の北側にある格安宿泊施設。ドミトリーとプライベートルームがあります。高速艇乗り場の前徒歩0分。</span></p>
-            <p lang="en">Address: 3-12-12 Maejima, Naha, Okinawa</p>
-            <p lang="ja" class="hidden">住所: 沖縄県那覇市前島3-12-12</p>
+            
+            <img src="https://myplace-guesthouse.com/wp-content/uploads/2022/03/myplace_01.jpg" alt="MY PLACE Guesthouse" class="accommodation-image">
+            
+            <p><strong>MY PLACE</strong> <span lang="en">- Budget accommodation located north of Tomari Port. Offers dormitory beds and private rooms. Just beside High Speed Boat Terminal 3.</span><span lang="ja" class="hidden">- 泊港の北側にある格安宿泊施設。ドミトリーとプライベートルームがあります。高速艇乗り場の前徒歩0分。</span></p>
+            
+            <p lang="en">Address: 3-12-12 Maejima, Naha, Okinawa (5-minute walk from Tomari Port)</p>
+            <p lang="ja" class="hidden">住所: 沖縄県那覇市前島3-12-12 (泊港から徒歩5分)</p>
+            
             <p lang="en">Phone: 098-123-4567</p>
             <p lang="ja" class="hidden">電話: 098-123-4567</p>
+            
+            <p lang="en">Website: <a href="https://myplace-guesthouse.com/ja/access/" class="external-link" target="_blank">https://myplace-guesthouse.com/ja/access/</a></p>
+            <p lang="ja" class="hidden">ウェブサイト: <a href="https://myplace-guesthouse.com/ja/access/" class="external-link" target="_blank">https://myplace-guesthouse.com/ja/access/</a></p>
+            
+            <img src="https://myplace-guesthouse.com/wp-content/uploads/2022/03/myplace_02.jpg" alt="MY PLACE Guesthouse room" class="accommodation-image">
         </section>
         
         <section class="card">
