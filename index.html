@@ -18,6 +18,9 @@
             --text: #f0f0f0;
             --bg: #121212;
             --card-bg: #1e1e1e;
+            --light-text: #333;
+            --light-bg: #f5f5f5;
+            --light-card-bg: #ffffff;
         }
         
         [data-theme="light"] {
@@ -48,6 +51,7 @@
             color: white;
             padding: 1rem;
             text-align: center;
+            position: relative;
         }
         
         h1 {
@@ -75,6 +79,10 @@
             gap: 0.5rem;
         }
         
+        button:hover {
+            opacity: 0.9;
+        }
+        
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -89,11 +97,168 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            margin: 1rem 0 0.5rem;
+            color: var(--secondary);
+        }
+        
         img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
             margin: 1rem 0;
+            display: block;
+        }
+        
+        .ferry-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        .ferry-table th, .ferry-table td {
+            border: 1px solid var(--secondary);
+            padding: 0.5rem;
+            text-align: left;
+        }
+        
+        .ferry-table th {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .island-section {
+            margin-bottom: 2rem;
+        }
+        
+        .beach-list, .facility-list {
+            list-style-type: none;
+            padding-left: 1rem;
+        }
+        
+        .beach-list li, .facility-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .beach-list li::before {
+            content: "🏖️";
+            position: absolute;
+            left: 0;
+        }
+        
+        .facility-list li::before {
+            content: "📍";
+            position: absolute;
+            left: 0;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            display: none;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary);
+        }
+        
+        .update-date {
+            font-style: italic;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .map-container {
+            position: relative;
+            margin: 1rem 0;
+        }
+        
+        .transport-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: rgba(0, 109, 143, 0.1);
+            border-radius: 8px;
+        }
+        
+        .transport-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--primary);
+        }
+        
+        .transport-info {
+            flex: 1;
+        }
+        
+        .to-top-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .to-top-button {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+        }
+        
+        .to-top-button:hover {
+            background-color: var(--secondary);
+        }
+        
+        .external-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .external-link:hover {
+            text-decoration: underline;
+        }
+        
+        .accommodation-image {
+            max-height: 300px;
+            object-fit: cover;
+            margin: 1rem 0;
+            width: 100%;
         }
         
         .ferry-links {
@@ -113,8 +278,14 @@
             font-weight: bold;
         }
         
-        .hidden {
-            display: none;
+        .ferry-link:hover {
+            background-color: var(--primary);
+        }
+        
+        .hero-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -128,11 +299,26 @@
         </div>
     </header>
     
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4E5n8zGzQTe9ldQcy6GUvZ93UW6rhL2X3W_K-_Bpb8OSN9MJ6NiRNH68&s=10" alt="Kerama Islands" class="hero-image">
+
     <div class="container">
         <section class="card">
-            <h2 lang="en">Island Information</h2>
-            <h2 lang="ja" class="hidden">島の情報</h2>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR31CQlY31kHgPkFH8qvLpjIuLvW32ax0mOpVEMwSs0xPMVfchpoQ5QUTUj&s=10" alt="Kerama Islands">
+            <h2 lang="en">Kerama Islands Map</h2>
+            <h2 lang="ja" class="hidden">慶良間諸島マップ</h2>
+            <div class="map-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR31CQlY31kHgPkFH8qvLpjIuLvW32ax0mOpVEMwSs0xPMVfchpoQ5QUTUj&s=10" alt="Map of Kerama Islands">
+            </div>
+            <p lang="en">The Kerama Islands are a group of 22 islands located about 40 kilometers west of Okinawa Main Island. The three main islands for tourism are Zamami, Aka, and Tokashiki.</p>
+            <p lang="ja" class="hidden">慶良間諸島は沖縄本島の西約40kmに位置する22の島々からなる群島です。観光の主要な島は座間味島、阿嘉島、渡嘉敷島の3つです。</p>
+        </section>
+        
+        <section class="card">
+            <h2 lang="en">Tomari Port Information</h2>
+            <h2 lang="ja" class="hidden">泊港情報</h2>
+            <p class="update-date" lang="en">Last updated: <span id="current-date"></span></p>
+            <p class="update-date" lang="ja" class="hidden">最終更新: <span id="current-date-ja"></span></p>
+            
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdAPNXL3ILqwI2CH6cmSzM6forL81hyKfkydVy27cFtor2s9yr9KlCL9Hk&s=10" alt="Tomari Port">
             
             <div class="ferry-links">
                 <!-- 英語表示用のボタン -->
@@ -145,10 +331,73 @@
                 <a href="https://www.vill.tokashiki.okinawa.jp/soshiki/sitekanri/5/2/1365.html" class="ferry-link hidden" target="_blank" lang="ja">渡嘉敷村</a>
                 <a href="https://tokashiki-ferry.jp/Senpaku/portal" class="ferry-link hidden" target="_blank" lang="ja">渡嘉敷島予約</a>
             </div>
+            
+            <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/695195216.jpg?k=a741adb5461b3a0db18b85a0955707e28e177406a48ba514fbac0c84a41bd0f6&o=&hp=1" alt="Accommodation" class="accommodation-image">
+        </section>
+        
+        <section class="card">
+            <h2 lang="en">Island Information</h2>
+            <h2 lang="ja" class="hidden">島の情報</h2>
+            
+            <div class="island-section">
+                <h3 lang="en">Zamami Island</h3>
+                <h3 lang="ja" class="hidden">座間味島</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeLURA3EAITigpWtYTYKGfdjLSptFTYNchI8CW4E-p3DhEkLBxzYfHjZH6&s=10" alt="Zamami Island">
+            </div>
+            
+            <div class="island-section">
+                <h3 lang="en">Aka Island</h3>
+                <h3 lang="ja" class="hidden">阿嘉島</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPipEcuPpVf4PANI-POTHXo-P3SchcjPncixU00QzXFqclvmGdeNmhQPop&s=10" alt="Aka Island">
+            </div>
+            
+            <div class="island-section">
+                <h3 lang="en">Tokashiki Island</h3>
+                <h3 lang="ja" class="hidden">渡嘉敷島</h3>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLk4gHaJRvLXINbwZ6cV7-_tK_zVZnDIJKnXNBaZ7hhC81YF-rCnKRdi-6&s=10" alt="Tokashiki Island">
+            </div>
         </section>
     </div>
-
+    
+    <footer>
+        <p lang="en">Contact me: <a href="mailto:mementomorikatsu@gmail.com" style="color: white;">mementomorikatsu@gmail.com</a></p>
+        <p lang="ja" class="hidden">連絡先: <a href="mailto:mementomorikatsu@gmail.com" style="color: white;">mementomorikatsu@gmail.com</a></p>
+    </footer>
+    
+    <div class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
     <script>
+        // Set current date
+        const today = new Date();
+        document.getElementById('current-date').textContent = today.toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+        document.getElementById('current-date-ja').textContent = today.toLocaleDateString('ja-JP', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+        
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            
+            if (newTheme === 'dark') {
+                themeToggle.querySelector('span[lang="en"]').textContent = 'Dark Mode';
+                themeToggle.querySelector('span[lang="ja"]').textContent = 'ダークモード';
+            } else {
+                themeToggle.querySelector('span[lang="en"]').textContent = 'Light Mode';
+                themeToggle.querySelector('span[lang="ja"]').textContent = 'ライトモード';
+            }
+        });
+        
         // Language toggle
         const langToggle = document.getElementById('lang-toggle');
         langToggle.addEventListener('click', () => {
@@ -167,6 +416,24 @@
             // Update button text
             langToggle.querySelector('span[lang="en"]').textContent = newLang === 'en' ? '日本語' : 'Japanese';
             langToggle.querySelector('span[lang="ja"]').textContent = newLang === 'en' ? 'English' : '英語';
+        });
+        
+        // Back to top button
+        window.addEventListener('scroll', () => {
+            const backToTop = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'flex';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+        
+        document.getElementById('back-to-top').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     </script>
 </body>
